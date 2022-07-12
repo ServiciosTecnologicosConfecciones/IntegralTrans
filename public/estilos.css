@@ -1,0 +1,698 @@
+/*ESTILO BOTON MENU CUANDO ESTA RESPONSIVO*/
+.botonMenu
+{
+   margin: 0 auto;
+   display: block;
+   width: 40px;
+   height: 36px;
+   padding: 10px;
+   border-radius: 7px;
+   background: rgb(255, 255, 255);
+   color: white;
+   cursor: pointer;
+   position: relative;
+}
+.botonMenu span
+{
+   display: block;
+   width: 30px;
+   height: 4px;
+   background: rgb(68, 67, 67);
+   margin-top: 1px;
+}
+label
+{
+   cursor: pointer;
+}
+#menu-toggle
+{
+   display: none;
+}
+#trickMenu
+{
+   display: none;
+   text-align: center;
+   background: white;
+   padding: 10px 0;
+}
+#trickMenu li a
+{
+   display: block;
+   padding: 10px 0;
+   color: black;
+}
+#menu-toggle:checked + #trickMenu
+{
+   display: block;
+}
+/*****ESTILO BOTON MENU CUANDO ESTA RESPONSIVO/
+
+/* ESTILO DEL MENU ESTABLE*/
+body {
+    background: white;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 1rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo img {
+    font-size: 2rem;
+    color: green;
+    width: 250px;
+    height: 140px;
+}
+
+header .navbar1 a {
+    top: 2rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: black;
+    text-decoration: none;
+    box-shadow: 2px 5px 5px 5px solid green;
+    padding: 30px;
+}
+header .navbar1 a:hover {
+    color: rgb(43, 94, 104);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px #365b5b,
+            0px 0px #385555;
+    color: rgb(15, 16, 16);
+    padding-bottom: 0px;
+
+}
+header label {
+    font-size: 7rem;
+    color: black;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+@media(max-width:1200px) {
+@media(max-width:768px) {
+
+    header label {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header .navbar1 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    header .navbar1 a {
+        display: block;
+        margin: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    header input:checked~.navbar1 {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    header input:checked~label::before {
+        content: 'f00d';
+    }
+}
+@media(max-width:450px) {
+}
+}
+/* ESTILO DEL MENU ESTABLE*******/
+
+/* ESTILO DEL BOTON SUBIR */
+.boton-subir {
+    display: none;
+    padding: 20px;
+    background: #024959;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 85px;
+}
+/* ESTILO DEL BOTON SUBIR *****/
+
+/* TEXTOS PRINCIPALES */
+.titulo-principal{
+    text-align:center;
+    margin-top: 40px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:40px; color:#024959;
+}
+
+.textos{
+    text-align: center;
+    margin: 20px;
+    font-size: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* TEXTOS PRINCIPALES ****/
+
+/* ESTILO DE SERVICIOS */
+.texto-servicios .texto-introduccion-servicio2{
+    color: #024959;
+    font-weight: 50px;
+}
+.contenedo {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #2f5665;
+}
+
+.contenedo figure {
+    max-width: 700px;
+    height: 700px;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    margin: 30px;
+    background: 2px red solid;
+}
+.contenedo figure h5{
+    color:rgb(255, 255, 255);
+    font-size:35px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.contenedo figure .text-servicios{
+    color:white;
+     text-align:justify;
+      margin:20px;
+}
+
+.contenedo figure img {
+    width: 90%;
+    height: 400px;
+    transition: all 500ms ease-out;
+    padding: 20px;
+}
+@media(max-width:450px){
+  .contenedo figure img{
+      width:70%;
+      height:40%;
+    }
+}
+/* ESTILO DE SERVICIOS*********/
+
+/* ESTILO DE ALIADOS*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.contenedor {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: inline-flexbox;
+
+}
+
+.contenedor figure {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    margin: 7px;
+    position: relative;
+
+}
+
+.contenedor figure img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+    padding: 0px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.contenedor figure a {
+    text-decoration: none;
+}
+
+.contenedor figure .capa {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: all 500ms ease-out;
+    visibility: hidden;
+    text-align: center;
+    background: rgba(11, 103, 123, 0.6);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    text-align: center;
+}
+
+.contenedor figure:hover>.capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor figure:hover>.capa h3 {
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+.contenedor figure:hover img {
+    transform: scale();
+}
+
+.contenedor figure .capa h3 {
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    margin-top: 20px;
+}
+
+/* ESTILO DE ALIADOS***********/
+
+/*ESTILO DEL FORMULARIO CONTACTENOS*/
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.form_container{
+    margin-left:-1rem;
+    display:flex;
+    justify-content:left;
+    margin-right:700px;
+}
+
+
+.form_container .form .form-header .form-title span{
+    color: rgb(18, 43, 46);
+}
+
+.form_container .form{
+    background-image:url();
+    width:90%;
+    max-width:658px;
+    margin:auto;
+    padding:5px 35px;
+    margin-top: 38px;
+    padding-bottom: 38px;
+    border-bottom:3px;
+    background: transparent;
+    box-shadow: 0px 0px 3px 2px #fafafa;
+    border-radius: 10px;
+}
+.form_container .form .form-label{
+    display:block;
+    color: rgb(17, 18, 19);
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position:relative;
+}
+.form_container .form .form-select{
+    width:100%;
+    height:40px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border-bottom: 2px solid #1976D2;
+    background:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 16px;
+}
+.form_container .form .form-select:hover{
+    background:white;
+}
+.form_container .form .form-input, .form-textarea{
+    background: rgba(255, 255, 255, 0.966);
+    border: none;
+    outline:none;
+    border-bottom: 2px solid #1d645e;
+    width: 100%;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: rgb(27, 27, 27);
+    font-family: roboto;
+}
+.form_container .form .form-textarea{
+    resize: vertical;
+    max-height: 150px;
+    min-height: 100px;
+}
+.form_container .form .botones{
+    justify-content:  center;
+}
+.form_container .form .boton-enviar{
+    width:25%;
+    font-family: Roboto;
+    outline: none;
+    background:#296fb1;
+    font-size: 16px;
+    border:none;
+    color: #fff;
+    padding:15px 0;
+    cursor: pointer;
+    transition:all .5s ease-out;
+    text-shadow: 9px 10px 9px  rgb(105, 146, 153);
+    margin-right: 10%;
+    margin-left:20%;
+}
+.form_container .form .boton-enviar:hover {
+    background:rgba(80, 156, 80, 0.979);
+}
+.form_container .form .boton-borrar{
+    width:25%;
+    font-family: Roboto;
+    outline: none;
+    background:#51575c;
+    font-size: 16px;
+    border:none;
+    color: #fff;
+    padding:15px 0;
+    cursor: pointer;
+    transition:all .5s ease-out;
+    text-shadow: 9px 10px 9px  rgb(25, 29, 31);
+}
+.form_container .form .boton-borrar:hover {
+    background:rgb(209, 90, 90);
+}
+
+/*  ESTILO DEL FORMULARIO CONTACTENOS*******/
+
+/* ESTILO DE CHAT FLOTANTE*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+.open-button {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #2F5665;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 60px;
+    right: 77px;
+    width: 280px;
+}
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 100px;
+    border: 3px solid #f1f1f1;
+    border-radius: 15px;
+    z-index: 9;
+}
+.form-form_container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #4e6064;
+    border-radius: 15px;
+    color: #fff;
+}
+.form-form_container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+.form-form_container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.form-form_container input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 20px;
+}
+.form-form_container .btn {
+    background-color: #345864;
+    color: white;
+    padding: 16px 20px;
+    border-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.form-form_container .cancel {
+    background-color: #345864;
+}
+.form-form_container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+/* ESTILO DE CHAT FLOTANTE*******/
+
+/* ESTILO DE WHATSAPP*/
+.btn-whatsapp {
+    display: block;
+    width: 70px;
+    height: 110px;
+    color: #1976D2;
+    position: fixed;
+    padding-top: 40px;
+    left: 7px;
+    bottom: 20px;
+    border-radius: 30%;
+    line-height: 80px;
+    text-align: center;
+    z-index: 999;
+}
+/* ESTILO DE WHATSAPP*******/
+
+/*ESTILO DE DESCRIPCION*/
+.descripcion {
+    width: 100%;
+    height: 100;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+    font: oblique bold 120% cursive;
+    bottom: 20px;
+    z-index: 2;
+    color: white;
+    font-size: 50px;
+    font-weight: 790;
+    -webkit-text-stroke: 1.5px #024959;
+}
+/*ESTILO DE DESCRIPCION****/
+
+/*ESTILOS DEL FORMULARIO REGISTRAR*/
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: rgb(255, 255, 255);
+    background-repeat:no-repeat;
+    background-position: right;
+
+}
+h1 {
+    color: rgb(237, 241, 239);
+    text-align: center;
+    font-family: hand;
+}
+.form {
+    width: 50%;
+    max-width: 65em;
+    margin: auto;
+    background: transparent;
+    border-radius: 20px;
+    margin-left: 2rem;
+    padding: auto;
+    box-shadow: 0px 0px 3px 5px rgb(194, 188, 188);
+}
+.form .titulo-form {
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    font-weight: 50px;
+    font-size: 35px;
+    border-radius: 20px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    font-family: hand;
+}
+.contenedor-inputs {
+    padding: 10px 20px 20px;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+input {
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid darkgray;
+    color: black;
+    justify-content: center;
+}
+select {
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 15px;
+    border: 1px solid rgb(22, 20, 20);
+}
+.form-input-50 {
+    width: 75%;
+    margin: 1%;
+}
+.form-input-100 {
+    width: 100%;
+}
+.boton-registrar {
+    background: rgb(29, 99, 67);
+    color: white;
+    margin: auto;
+    padding: 10px 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 1px rgb(19, 65, 65);
+    font-family: armup;
+    font-size: 20px;
+}
+.boton-registrar:hover {
+    background: rgb(26, 92, 61);
+    box-shadow: 0px 0px 2px 5px rgb(29, 99, 67);
+}
+.form-link {
+    width: 100%;
+    margin: 10x;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+.form-link a {
+    color: rgb(0, 0, 0);
+}
+.form-link a:hover {
+    color: rgb(0, 0, 0);
+}
+/*ESTILOS DEL FORMULARIO REGISTRAR******/
+
+
+
+/* ESTILO DE IDIOMA*/
+.en{
+color: #333;
+}
+
+.es{
+    color: #00a1ff;
+    }
+.check{
+    position: relative;
+    width: 50px;
+}
+
+.check:before{
+content: '';
+position: absolute;
+width: 50px;
+height: 25px;
+background: #333 ;
+border-radius: 25px;
+}
+
+.check:after{
+    content: '';
+    position: absolute;
+width: 25px;
+height: 25px;
+background: #fff ;
+border-radius: 25px;
+transition: 0.25s;
+border: 2px solid #333;
+box-sizing: border-box;
+}
+.check:checked:after{
+left: 25px;
+border: 2px solid #00a1ff;
+}
+.check:checked::before{
+    background: #00a1ff ;
+}
+/* ESTILO DE IDIOMA*******/
+
+
+
+/* Adaptación a mobile para un breakpoint de:*/
+
+@media(max-width:500px){
+    .form_container{
+        margin:auto;
+    }
+
+}
+@media(max-width:750px){
+    .form_container{
+        margin:auto;
+    }
+}
+@media(max-width:1200px){
+    .form_container{
+        margin:auto;
+    }
+}
+@media(max-width:1300px){
+    .form_container{
+        margin:auto;
+    }
+}
+@media(max-width:1400px){
+    .form_container{
+        margin:auto;
+    }
+}
+@media(max-width:1500px){
+    .form_container{
+        margin:auto;
+    }
+}
+
+
