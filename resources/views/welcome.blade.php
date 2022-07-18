@@ -69,6 +69,10 @@
     <br>
     <br>
     <br>
+<!--==========================FUNCIONALIDAD DE LAS ALERTAS================================ -->
+@if (Session::has('message'))
+<p class="alert alert-info" style="color: #000000;"><br><br>{{ Session::get('message') }}</p>
+@endif
 
     <!--==========================SLIDER DE IMAGENES================================ -->
     <section>
@@ -332,7 +336,7 @@
         });
     </script>
 
-    <!-- Modal -->
+    <!--==========================MODAL================================ -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -350,10 +354,6 @@
             </div>
         </div>
     </div>
-    <!--==========================FUNCIONALIDAD DE LAS ALERTAS================================ -->
-    @if (Session::has('message'))
-        <p class="alert alert-info" style="color: #000000;"><br><br>{{ Session::get('message') }}</p>
-    @endif
 
 </body>
 

@@ -66,6 +66,10 @@
     <br>
     <br>
 
+    <!--==========================FUNCIONALIDAD DE LAS ALERTAS================================ -->
+    @if (Session::has('message'))
+        <p class="alert alert-info" style="color: #000000;"><br><br>{{ Session::get('message') }}</p>
+    @endif
     <!--==========================SLIDER DE IMAGENES================================ -->
     <section>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -123,8 +127,7 @@
             @foreach ($servicios as $servicio)
                 <figure>
                     <br>
-                    <h5>
-                        {{ $servicio->service_name_en }}</h5>
+                    <h5>{{ $servicio->service_name_en }}</h5>
                     <img src="{{ $servicio->image }}">
                     <p class="text-servicios">{{ $servicio->service_description_en }}</p>
                     <a href="{{ route('home.show', ['id' => $servicio->id]) }}">
@@ -376,10 +379,7 @@
         </div>
     </div>
 
-    <!--==========================FUNCIONALIDAD DE LAS ALERTAS================================ -->
-    @if (Session::has('message'))
-        <p class="alert alert-info" style="color: #000000;"><br><br>{{ Session::get('message') }}</p>
-    @endif
+
 
 </body>
 

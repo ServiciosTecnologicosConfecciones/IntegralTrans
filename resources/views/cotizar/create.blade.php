@@ -271,7 +271,7 @@
             document.getElementById("boton").className = "fas fa-retweet";
             document.getElementById("vuelta").innerHTML = '<strong>Ida y vuelta</strong>';
             destino.style.display ='block';
-            
+
 
             // document.getElementById("destino").removeAttribute("style");
 
