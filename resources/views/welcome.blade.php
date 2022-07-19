@@ -347,6 +347,7 @@
                 </div>
                 <div class="modal-body">
                     <p>{{ $servicio->service_name }}</p>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

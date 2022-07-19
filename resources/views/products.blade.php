@@ -352,7 +352,7 @@
                                                     '</option>');
                                                     // console.log(document.getElementById('lprice').value);
                                                     document.getElementById('tte').value=loc
-                                                
+
                                                 });
                                             }
 
@@ -373,6 +373,7 @@
 @php
     echo $valor = "<script>console.log(loc1);</script>";
     echo $valor;
+    
 @endphp
 
 
