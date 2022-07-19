@@ -37,7 +37,7 @@
                               </td>
                               <td>
                                 <a href="#">
-                                    
+
                                   <p class="mb-2 md:ml-4">{{ $item->additional_service_name }}</p>
 
                                 </a>
@@ -76,7 +76,7 @@
                         </table>
                         <div>
                          Total: ${{ Cart::getTotal() }}
-                      
+
                         </div>
                         <div>
                           <form action="{{ route('cart.clear') }}" method="POST">
@@ -92,3 +92,4 @@
             </div>
         </main>
     @endsection -->
+
