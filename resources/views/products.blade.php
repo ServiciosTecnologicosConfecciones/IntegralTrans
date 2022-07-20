@@ -4,22 +4,22 @@
     @php
     // SDK de Mercado Pago
     require base_path('vendor/autoload.php');
-    // Agrega credenciales
-    MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
+    // // Agrega credenciales
+     MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
 
-    // Crea un objeto de preferencia
+    // // Crea un objeto de preferencia
 
     $preference = new MercadoPago\Preference();
-    // Crea un ítem en la preferencia
-    // $total = $_GET['lprice'];
-    $item = new MercadoPago\Item();
-    $item->title = 'prueba';
-    $item->quantity = 1;
-    $item->currency_id = 'COP';
-    //EL VALOR TOTAL SE LE PONE AL unit_price
-    $item->unit_price = 1110;
-    $preference->items = [$item];
-    $preference->save();
+     // Crea un ítem en la preferencia
+     // $total = $_GET['lprice'];
+     $item = new MercadoPago\Item();
+     $item->title = 'prueba';
+     $item->quantity = 1;
+     $item->currency_id = 'COP';
+     //EL VALOR TOTAL SE LE PONE AL unit_price
+     $item->unit_price = 1110;
+     $preference->items = [$item];
+     $preference->save();
     @endphp
 
     <style>
@@ -44,16 +44,17 @@
                 <h3 class="text-2xl font-medium text-gray-700">Product List</h3>
 
 
-                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                {{-- <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data"> --}}
+                <form action="pay" method="get">
                     <div class="row col-md-5">
                         <abbr title="Seleccione el tipo de vehículo que desea"><i class="fas fa-car"
                             style="font-size: 25px;"></i></abbr>
 
-                            <select class="form-select" name="" id="" onfocus='this.size=4;' onblur='this.size=1;'
+                            <select class="form-select" name="vehicle_name" id="vehicle_name" onfocus='this.size=4;' onblur='this.size=1;'
                             onchange='this.size=1; this.blur();'>
                             <option value="0" selected disabled> Seleccione </option>
                             @foreach ($vehicle as $vehi)
-                            <option value="{{ $vehi['id'] }}">{{ $vehi['vehicle_name'] }} -
+                            <option  value="{{ $vehi['id'] }}">{{ $vehi['vehicle_name'] }} -
                                 <a>{{ $vehi['helper'] }}</a>
                             </p>
                         </option>
@@ -139,15 +140,17 @@
                         <a type="button" class="btn btn-outline-secondary" onclick="history.back()"
                         name="volver atrás">Volver</a>
                     </div> -->
-                </form>
+                    <input type="number" name="loc" value="" id="loc" hidden>
 
-                <div class="bg-white rounded-lg p-6 flex justify-between items-center">
-                    <div class="text-gray-700">
-                        <p class="text-sm font-semibold">Total</p>
-                        <select name="lprice" class="form-control" select disabled></select>
-                    <button class='cho-container' id="t3" ></button>
-                </div>
-            </div>
+                    <div class="bg-white rounded-lg p-6 flex justify-between items-center">
+                        <div class="text-gray-700">
+                            <p class="text-sm font-semibold">Total</p>
+
+                            <?php echo "<input type='number' id='tte' name='tte' value='' readonly>" ?>
+                            <button class='cho-container' id="t3" style="background-color: aquamarine" >pagar</button>
+                        </div>
+                    </div>
+                </form>
 
 
 
@@ -194,7 +197,7 @@
                                             //HACER QUE EL VALOR DEL SELECT(total) SE PASE A PHP
                                             jQuery.each(data, function(val, loc) {
                                                 $('select[name="lprice"]').append(
-                                                    '<option id="lprice" value="' +
+                                                    '<option id="lprice" name="lprice" value="' +
                                                     val + '">' +
                                                     loc +
                                                     '</option>');
@@ -209,7 +212,6 @@
 
                 });
                 </script>
-            <input type="number" id="tte" name="tte" value="">
 
             <script text="text/javascript">
                 jQuery(document).ready(function() {
@@ -295,21 +297,21 @@
             {{-- <script src="https://www.mercadopago.com/v2/security.js" view="index"></script> --}}
 
             <script>
-                // Agrega credenciales de SDK
-                const mp = new MercadoPago("{{ config('services.mercadopago.key') }}", {
-                    locale: "es-CO",
-                });
+                 Agrega credenciales de SDK
+                 const mp = new MercadoPago("{{ config('services.mercadopago.key') }}", {
+                     locale: "es-CO",
+                 });
 
-                // Inicializa el checkout
-                mp.checkout({
-                    preference: {
-                        id: '{{ $preference->id }}',
-                    },
-                    render: {
-                        container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
-                        label: "Pagar", // Cambia el texto del botón de pago (opcional)
-                    },
-                });
+                // // Inicializa el checkout
+                 mp.checkout({
+                     preference: {
+                         id: '{{ $preference->id }}',
+                     },
+                     render: {
+                         container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+                         label: "Pagar", // Cambia el texto del botón de pago (opcional)
+                     },
+                 });
                 </script>
             <?php
             $t = Session::get('admin_name');
@@ -346,35 +348,36 @@
                                             //HACER QUE EL VALOR DEL SELECT(total) SE PASE A PHP
                                             jQuery.each(data, function(val, loc) {
                                                 $('select[name="lprice"]').append(
-                                                    '<option id="lprice" name="lprice" value="' +
+                                                    '<input id="lprice" name="lprice" value="' +
                                                     val + '">' +
                                                     loc +
-                                                    '</option>');
-                                                    // console.log(document.getElementById('lprice').value);
+                                                    '>');
                                                     document.getElementById('tte').value=loc
+                                                    document.getElementById('loc').value=loc
+                                                    console.log(document.getElementById('tte').value=loc);
 
                                                 });
                                             }
 
                                         });
-                                    } else {
-                                        $('select[name="lprice"]').empty();
-                            }
+                                    }
+                                });
+                            });
+
                         });
-                    });
 
-                });
+                        console.log(loc1);
+                        document.write(jQuery(this).val())
+                        // console.log(tte);
+                    </script>
 
-                console.log(loc1);
-
-                // console.log(tte);
-                </script>
 
 @php
-    echo $valor = "<script>console.log(loc1);</script>";
+
     echo $valor;
-    
-@endphp
+
+
+    @endphp
 
 
 @endsection

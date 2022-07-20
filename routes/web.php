@@ -83,3 +83,7 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 Route::get('dropdownlist',[AdditionalController::class,'getPlaces'])->name('getPlaces');
 Route::get('dropdownlist/getDestination/{id}',[AdditionalController::class,'getDestination'])->name('getDestination');
 Route::get('dropdownlist/getPrice/{id}/Location/{idlocation}',[AdditionalController::class,'getPrice'])->name('getPrice');
+
+Route::get('/pay', function(){
+    return view('pay');
+})->name('pay');
