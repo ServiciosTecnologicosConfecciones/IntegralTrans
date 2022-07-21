@@ -73,13 +73,6 @@ Route::resource('adicional', serviciosadicionalesController::class);
 Route::group(['prefix'=>'adicional', 'as'=>'adicional.'], function(){
     Route::get('create',[serviciosadicionalesController::class,'create'])->name(('create'));
 });
-
-Route::get('/index', [AdditionalController::class, 'productList'])->name('products.list');
-Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 Route::get('dropdownlist',[AdditionalController::class,'getPlaces'])->name('getPlaces');
 Route::get('dropdownlist/getDestination/{id}',[AdditionalController::class,'getDestination'])->name('getDestination');
 Route::get('dropdownlist/getPrice/{id}/Location/{idlocation}',[AdditionalController::class,'getPrice'])->name('getPrice');
